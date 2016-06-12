@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../../resources/lib/css1/base.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/lib/css1/wxshopmanh5.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="../../resources/lib/javascript/vue.js"></script>
+    
+    <script type="text/javascript" src="../../resources/lib/javascript/vue-resource.min.js"></script>
+    <title>vueTest</title>
+    
+    <script type="text/javascript">
+		var phoneWidth =  parseInt(window.screen.width);
+		var phoneScale = phoneWidth/640;
+		var ua = navigator.userAgent;
+		if (/Android (\d+\.\d+)/.test(ua)){
+			var version = parseFloat(RegExp.$1);
+			if(version>2.3){
+				document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+			}else{
+				document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+			}
+		} else {
+			document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+	</script>
+	<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+	<style type="text/css">
+		body{font-size: 24px;}
+	</style>
+</head>
+<body>
+	 <div class="shopmanmain wx_guanlian bghui lh40" id="shopDetails">
+		<ul class="wxshopdata_main">
+			<li>
+				<p class="a1">店铺全称：</p>
+				<p class="a2">{{ info.shop_name}}</p>
+				
+			</li>
+			
+			<li>
+				<p class="a1">信用等级：</p>
+				<p class="a2" v-if="info.shop_certification_star==0"><img src="../../resources/lib/images/shop/user_level/beauty_level_3.png" width="45" height="20"></p>
+				<p class="a2" v-if="info.shop_certification_star==2"><img src="../../resources/lib/images/shop/user_level/beauty_level_3.png" width="45" height="20"></p>
+				<p class="a2" v-if="info.shop_certification_star==3"><img src="../../resources/lib/images/shop/user_level/beauty_level_3.png" width="45" height="20"></p>
+
+			
+			</li>
+			<li>
+				<p class="a1">店铺编号：</p>
+				<p class="a2">{{info.shop_custom_num}}</p>
+			
+			</li>
+			<li>
+				<p class="a1">保证金：</p>
+				<p class="a2">
+					<span class="fl"><img src="imges/baozhang1_r6_c4.gif" width="101" height="28"></span>
+					<span class="fl"><img src="imges/baozhang2_r6_c4.gif" width="101" height="28"></span>
+					<span class="fl"><img src="imges/baozhang3_r6_c4.gif" width="101" height="28"></span>
+				</p>
+			
+			</li>
+			<li>
+				<p class="a1">星级认证：</p>
+				<p class="a2"><span class="fl"><img src="imges/xingji1_r8_c4.gif" width="55" height="26"></span> <span class="fl"><img src="imges/xingji2_r8_c4.gif" width="55" height="26"></span></p>
+				
+			</li>
+			<li>
+				<p class="a1">店面环境：</p>
+				<p class="a2"><span class="starkai2">{{info.shop_area}}</span></p>
+				
+			</li>
+			<li>
+				<p class="a1">性价比：</p>
+				<p class="a2"><span class="starkai2">{{info.shop_compare}}</span></p>
+				
+			</li>
+			<li>
+				<p class="a1">店铺全称：</p>
+				<p class="a2">{{info.shop_other_name}}</p>
+				
+			</li>
+			
+			<li>
+				<p class="a1">工作时间：</p>
+				<p class="a2">{{info.shop_bussiness_time}}</p>
+			
+			</li>
+			
+			<li>
+				<p class="a1">店铺面具：</p>
+				<p class="a2">{{info.shop_area}}</p>
+			
+			</li>
+			
+			<li>
+				<p class="a1">主营业务：</p>
+				<p class="a2">{{info.shop_bustiness}}</p>
+			
+			</li>
+			
+			
+			<li>
+				<p class="a1">电话：</p>
+				<p class="a2">{{info.shop_tel}}</p>
+			
+			</li>
+			
+			<li>
+				<p class="a1">地址：</p>
+				<p class="a3">{{info.shop_addr}}</p>
+				
+			</li>
+			
+		
+		
+		
+		</ul>
+	
+	
+	</div>
+
+
+
+</body>
+<script type="text/javascript" src="../../resources/lib/javascript/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../../resources/js/global_utils.js"></script>
+<script type="text/javascript" src="../../resources/js/index.js"></script>
+
+</html>
